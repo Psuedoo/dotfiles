@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+sudo pacman -Syu --noconfirm
+
+sudo pacman -S --noconfirm {{ range .packages.linux.pacman -}}
+{{ . | quote }} {{ end }}
+
+paru -S --noconfirm {{ range .packages.linux.paru -}}
+{{ . | quote }} {{ end }}
+{{ end -}}

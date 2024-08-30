@@ -1,0 +1,24 @@
+packages:
+  linux:
+    pacman:
+      - 'paru'
+    paru:
+      - 'git'
+      - 'make'
+      - 'fd'
+      - 'unzip'
+      - 'gcc'
+      - 'ripgrep'
+      - 'npm'
+      - 'qtile'
+      - 'rofi'
+      - 'thunar'
+      - 'alacritty'
+      - 'picom'
+      - 'python-pywal'
+      - 'neovim'
+      - 'zsh'
+      - 'feh'
+      - 'jq'
+      - 'dunst'
+      - 'xclip'

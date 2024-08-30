@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 ac78e7d9e77048fa7d5b0711f85aab93508e71a7 Psuedoo <forthewin720@gmail.com> 1724527995 -0400	clone: from github.com:psuedoo/kickstart.nvim.git
+ac78e7d9e77048fa7d5b0711f85aab93508e71a7 a75847b95fc6669b3be5739a4caf2fecf18547c7 Psuedoo <forthewin720@gmail.com> 1724528028 -0400	commit: add lazy-lock.json tracking
+a75847b95fc6669b3be5739a4caf2fecf18547c7 76b7e8a39e90f44f35ae0e9d0c55d731c06cb3f6 Psuedoo <forthewin720@gmail.com> 1724529081 -0400	commit: add comment plugin
+76b7e8a39e90f44f35ae0e9d0c55d731c06cb3f6 674c12f4290632fb33951534f9bd0bdb88881017 Psuedoo <forthewin720@gmail.com> 1724529652 -0400	commit: change theme and remove pyright
+674c12f4290632fb33951534f9bd0bdb88881017 a9139ecde292b80a733adb3c0101e52d2d3523c6 Psuedoo <forthewin720@gmail.com> 1724530042 -0400	commit: add scala support
+a9139ecde292b80a733adb3c0101e52d2d3523c6 a6ffc3d5cd15b2d8b4d916f5d759fc617f640920 Psuedoo <forthewin720@gmail.com> 1724686988 -0400	commit: add ts/react setup config
+a6ffc3d5cd15b2d8b4d916f5d759fc617f640920 d4aaa8c683c1898ee886e2bb52c1ea888ae4f8fa Psuedoo <forthewin720@gmail.com> 1724687433 -0400	commit: move scala to custom plugins
+d4aaa8c683c1898ee886e2bb52c1ea888ae4f8fa 10eae24603ddcdbdd789ee2ec0eea1aa489fbf06 Psuedoo <forthewin720@gmail.com> 1724717223 -0400	commit: change loading of custom plugins
+10eae24603ddcdbdd789ee2ec0eea1aa489fbf06 93d7f8cd0f0603214008827ce24b5a79827f44b1 Psuedoo <forthewin720@gmail.com> 1724773767 -0400	commit: turn on nerd fonts
+93d7f8cd0f0603214008827ce24b5a79827f44b1 234f2aa48a766de04ca668ea38099c74c87d911b Psuedoo <forthewin720@gmail.com> 1725031311 -0400	pull: Fast-forward

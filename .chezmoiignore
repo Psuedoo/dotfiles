@@ -1,0 +1,11 @@
+# Neovim
+**/autoload/
+**/autoload/**/*
+**/plugged/
+**/plugged/**/*
+**/yankring_history*.txt
+
+
+# Python stuffs
+/**/__pycache__
+/**/venv

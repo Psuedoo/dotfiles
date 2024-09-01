@@ -28,3 +28,4 @@ packages:
       - 'python-pip'
       - 'python-setuptools'
       - 'colorz'
+      - 'networkmanager-dmenu-git'

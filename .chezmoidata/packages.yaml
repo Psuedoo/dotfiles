@@ -24,3 +24,4 @@ packages:
       - 'xclip'
       - 'trash-cli'
       - 'gvim'
+      - 'tree'

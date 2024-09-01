@@ -4,6 +4,7 @@ import subprocess
 from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
 from libqtile.lazy import lazy
+
 from modules.keys import *
 from modules.layouts import floating_layout, layouts
 from modules.screens import *
@@ -35,10 +36,10 @@ groups = [
             ),
         ],
     ),
-    Group("1", label="DEV"),
-    Group("2", label="WWW"),
-    Group("3", label="SYS"),
-    Group("4", label="TEST"),
+    Group("1", label="1"),
+    Group("2", label="2"),
+    Group("3", label="3"),
+    Group("4", label="4"),
 ]
 
 for i in groups:

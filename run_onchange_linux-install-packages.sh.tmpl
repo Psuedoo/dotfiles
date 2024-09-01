@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "endeavouros" -}}
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 sudo pacman -S --noconfirm {{ range .packages.linux.pacman -}}

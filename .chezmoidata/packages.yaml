@@ -25,3 +25,6 @@ packages:
       - 'trash-cli'
       - 'gvim'
       - 'tree'
+      - 'python-pip'
+      - 'python-setuptools'
+      - 'colorz'

@@ -1,9 +1,9 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-sudo pacman -S --noconfirm {{ range .packages.linux.pacman -}}
+sudo pacman -S --noconfirm --needed {{ range .packages.linux.pacman -}}
 {{ . | quote }} {{ end }}
 
-paru -S --noconfirm {{ range .packages.linux.paru -}}
+paru -S --noconfirm --needed {{ range .packages.linux.paru -}}
 {{ . | quote }} {{ end }}
 {{ end -}}

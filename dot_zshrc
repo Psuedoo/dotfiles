@@ -39,6 +39,6 @@ export NVM_DIR="$HOME/.nvm"
 export LESS=-R
 
 # Wallpaper Setting
-wal --backend colorz -n -i "/home/psuedo/.config/Wallpaper/foggy-forest.png"
+wal --backend colorz -n -i "/home/psuedo/.config/Wallpaper/moon-man.png"
 feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
 

@@ -29,3 +29,4 @@ packages:
       - 'python-setuptools'
       - 'colorz'
       - 'networkmanager-dmenu-git'
+      - 'tmux'

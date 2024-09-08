@@ -36,9 +36,9 @@ groups = [
             ),
         ],
     ),
-    Group("1", label="1"),
-    Group("2", label="2"),
-    Group("3", label="3"),
+    Group("1", label="", matches=[Match(wm_class=["Alacritty", "tmux"])]),
+    Group("2", label="", matches=[Match(wm_class=["firefox"])]),
+    Group("3", label="󰙯", matches=[Match(wm_class=["discord"])]),
     Group("4", label="4"),
 ]
 

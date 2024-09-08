@@ -27,6 +27,7 @@ highlight_color = ColorE
 some_other_color = ColorG
 
 font_name = "Ubuntu Mono Bold"
+bar_height = 40
 
 
 widget_defaults = dict(
@@ -49,18 +50,16 @@ screens = [
                 widget.GroupBox(
                     fontsize=24,
                     borderwidth=3,
-                    highlight_method="block",
-                    active=accent_color,
+                    highlight_method="line",
                     block_highlight_text_color=main_color,
-                    highlight_color=highlight_color,
+                    highlight_color=bg_color,
+                    active=accent_color,
                     inactive=some_other_color,
                     foreground=highlight_color,
-                    this_current_screen_border=bg_color,
                     this_screen_border=bg_color,
                     other_current_screen_border=bg_color,
                     other_screen_border=bg_color,
                     urgent_border=bg_color,
-                    # rounded=True,
                     disable_drag=True,
                 ),
                 widget.Spacer(
@@ -74,7 +73,26 @@ screens = [
                     foreground=accent_color,
                     fmt="Layout: {}",
                 ),
-                widget.Spacer(),
+                widget.TextBox(
+                    text="",
+                    padding=0,
+                    margin=0,
+                    fontsize=bar_height,
+                    foreground=bg_color,
+                    background=main_color,
+                ),
+                widget.Spacer(
+                    foreground=main_color,
+                    background=main_color,
+                ),
+                widget.TextBox(
+                    text="",
+                    padding=0,
+                    margin=0,
+                    fontsize=28,
+                    foreground=bg_color,
+                    background=main_color,
+                ),
                 widget.Memory(
                     format="Mem Used: {MemUsed: .0f}{mm}",
                     foreground=accent_color,
@@ -104,7 +122,7 @@ screens = [
                     format="%I:%M %p",
                 ),
             ],
-            30,
+            bar_height,
             border_color=some_other_color,
             # Uncommenting this will make the bar "float"
             # margin=[15, 60, 6, 30],

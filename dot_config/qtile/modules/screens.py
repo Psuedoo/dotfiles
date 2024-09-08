@@ -1,3 +1,4 @@
+import json
 import os
 
 from libqtile import bar
@@ -5,214 +6,108 @@ from libqtile.config import Screen
 
 from .widgets import *
 
+colors = os.path.expanduser("~/.cache/wal/colors.json")
+colordict = json.load(open(colors))
+
+ColorZ = colordict["colors"]["color0"]
+ColorA = colordict["colors"]["color1"]
+ColorB = colordict["colors"]["color2"]
+ColorC = colordict["colors"]["color3"]
+ColorD = colordict["colors"]["color4"]
+ColorE = colordict["colors"]["color5"]
+ColorF = colordict["colors"]["color6"]
+ColorG = colordict["colors"]["color7"]
+ColorH = colordict["colors"]["color8"]
+ColorI = colordict["colors"]["color9"]
+
+main_color = ColorF
+bg_color = ColorZ
+accent_color = ColorA
+highlight_color = ColorE
+some_other_color = ColorG
+
+font_name = "Ubuntu Mono Bold"
+
+
+widget_defaults = dict(
+    font=font_name,
+    fontsize=12,
+    padding=3,
+    background=bg_color,
+    foreground=main_color,
+)
+
+extension_defaults = widget_defaults.copy()
+
 screens = [
     Screen(
         top=bar.Bar(
             [
                 widget.Spacer(
                     length=15,
-                    background="#282738",
-                ),
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/launch_Icon.png',
-                #     margin=2,
-                #     background='#282738',
-                #     mouse_callbacks={"Button1":power},
-                # ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/6.png",
                 ),
                 widget.GroupBox(
                     fontsize=24,
                     borderwidth=3,
                     highlight_method="block",
-                    active="#E5B9C6",
-                    block_highlight_text_color="#CFB3E5",
-                    highlight_color="#4B427E",
-                    inactive="#282738",
-                    foreground="#4B427E",
-                    background="#353446",
-                    this_current_screen_border="#353446",
-                    this_screen_border="#353446",
-                    other_current_screen_border="#353446",
-                    other_screen_border="#353446",
-                    urgent_border="#353446",
-                    rounded=True,
+                    active=accent_color,
+                    block_highlight_text_color=main_color,
+                    highlight_color=highlight_color,
+                    inactive=some_other_color,
+                    foreground=highlight_color,
+                    this_current_screen_border=bg_color,
+                    this_screen_border=bg_color,
+                    other_current_screen_border=bg_color,
+                    other_screen_border=bg_color,
+                    urgent_border=bg_color,
+                    # rounded=True,
                     disable_drag=True,
                 ),
                 widget.Spacer(
                     length=8,
-                    background="#353446",
                 ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/1.png",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/layout.png", background="#353446"
+                widget.Sep(),
+                widget.Spacer(
+                    length=8,
                 ),
                 widget.CurrentLayout(
-                    background="#353446",
-                    foreground="#E5B9C6",
-                    fmt="{}",
-                    font="Ubuntu Mono Bold",
-                    fontsize=13,
+                    foreground=accent_color,
+                    fmt="Layout: {}",
                 ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/5.png",
+                widget.Spacer(),
+                widget.Memory(
+                    format="Mem Used: {MemUsed: .0f}{mm}",
+                    foreground=accent_color,
+                    update_interval=5,
                 ),
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/search.png',
-                #     margin=2,
-                #     background='#282738',
-                #     mouse_callbacks={"Button1": search},
-                # ),
-                # widget.TextBox(
-                #     fmt='Search',
-                #     background='#282738',
-                #     font="Ubuntu Mono Bold",
-                #     fontsize=13,
-                #     foreground='#E5B9C6',
-                #     mouse_callbacks={"Button1": search},
-                # ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/4.png",
+                widget.Spacer(
+                    length=8,
                 ),
-                widget.WindowName(
-                    background="#353446",
-                    format="{name}",
-                    font="Ubuntu Mono Bold",
-                    fontsize=13,
-                    foreground="#E5B9C6",
-                    empty_group_string="Desktop",
-                ),
-                widget.Prompt(),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/3.png",
-                ),
-                widget.Systray(
-                    background="#282738",
-                    fontsize=2,
-                ),
-                widget.TextBox(
-                    text=" ",
-                    background="#282738",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/6.png",
-                    background="#353446",
-                ),
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/Drop1.png',
-                # ),
-                # widget.Net(
-                # format=' {up}   {down} ',
-                # background='#353446',
-                # foreground='#E5B9C6',
-                # font="Ubuntu Mono Bold",
-                # prefix='k',
-                # ),
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/2.png',
-                # ),
-                # widget.Spacer(
-                # length=8,
-                # background='#353446',
-                # ),
+                # TODO: Add a check to see if this is on a laptop
                 widget.Backlight(
                     backlight_name="intel_backlight",
                     brightness_file="/sys/class/backlight/intel_backlight/brightness",
                     max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
                 ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/Misc/ram.png",
-                    background="#353446",
-                ),
-                widget.Spacer(
-                    length=-7,
-                    background="#353446",
-                ),
-                widget.Memory(
-                    background="#353446",
-                    format="{MemUsed: .0f}{mm}",
-                    foreground="#E5B9C6",
-                    font="Ubuntu Mono Bold",
-                    fontsize=13,
-                    update_interval=5,
-                ),
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/Drop2.png',
-                # ),
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/2.png',
-                # ),
                 widget.Spacer(
                     length=8,
-                    background="#353446",
                 ),
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/2.png',
-                # ),
-                widget.Spacer(
-                    length=8,
-                    background="#353446",
-                ),
+                # TODO: Add a check to see if this is on a laptop
                 widget.Battery(
                     format=" {percent:2.0%}",
-                    font="Ubuntu Mono ExtraBold",
-                    fontsize=12,
-                    padding=10,
-                    background="#353446",
-                ),
-                widget.Memory(
-                    format="﬙{MemUsed: .0f}{mm}",
-                    font="Ubuntu Mono Bold",
-                    fontsize=12,
-                    padding=10,
-                    background="#4B4D66",
-                ),
-                # widget.Volume(
-                #     font="Ubuntu Mono Bold",
-                #     fontsize=13,
-                #     theme_path='~/.config/qtile/Assets/Volume/',
-                #     emoji=True,
-                #     background='#353446',
-                # ),
-                # widget.Spacer(
-                #     length=-5,
-                #     background='#353446',
-                #     ),
-                # widget.Volume(
-                #     font="Ubuntu Mono Bold",
-                #     fontsize=13,
-                #     background='#353446',
-                #     foreground='#E5B9C6',
-                # ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/5.png",
-                    background="#353446",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/Misc/clock.png",
-                    background="#282738",
-                    margin_y=6,
-                    margin_x=5,
-                ),
-                widget.Clock(
-                    format="%I:%M %p",
-                    background="#282738",
-                    foreground="#E5B9C6",
-                    font="Ubuntu Mono Bold",
-                    fontsize=13,
+                    foreground=accent_color,
                 ),
                 widget.Spacer(
                     length=18,
-                    background="#282738",
+                ),
+                widget.Clock(
+                    format="%I:%M %p",
                 ),
             ],
             30,
-            border_color="#282738",
-            border_width=[0, 0, 0, 0],
-            margin=[15, 60, 6, 30],
+            border_color=some_other_color,
+            # Uncommenting this will make the bar "float"
+            # margin=[15, 60, 6, 30],
         ),
     ),
 ]

@@ -10,7 +10,7 @@ from modules.layouts import floating_layout, layouts
 from modules.screens import *
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 
 # Add key bindings to switch VTs in Wayland.
 # We can't check qtile.core.name in default config as it is loaded before qtile is started
@@ -31,12 +31,10 @@ groups = [
     ScratchPad(
         "p",
         [
-            DropDown(
-                "Term", "alacritty", opacity=1, height=0.5, on_focus_lost_hide=False
-            ),
+            DropDown("Term", terminal, opacity=1, height=0.5, on_focus_lost_hide=False),
         ],
     ),
-    Group("1", label="", matches=[Match(wm_class=["Alacritty", "tmux"])]),
+    Group("1", label="", matches=[Match(wm_class=["Alacritty", "tmux", "kitty"])]),
     Group("2", label="", matches=[Match(wm_class=["firefox"])]),
     Group("3", label="󰙯", matches=[Match(wm_class=["discord"])]),
     Group("4", label="4"),

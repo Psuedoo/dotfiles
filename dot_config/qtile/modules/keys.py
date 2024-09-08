@@ -3,7 +3,7 @@ from libqtile.config import Key
 from .mouse import *
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 brightness_up = "brightnessctl s 10%+"
 brightness_down = "brightnessctl s 10%-"
 

@@ -13,7 +13,7 @@ packages:
       - 'qtile'
       - 'rofi'
       - 'thunar'
-      - 'alacritty'
+      - 'kitty'
       - 'picom'
       - 'python-pywal'
       - 'neovim'

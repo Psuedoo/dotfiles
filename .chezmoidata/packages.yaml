@@ -1,7 +1,6 @@
 packages:
   linux:
     pacman:
-      - 'base-devel'
       - 'paru'
     paru:
       - 'git'

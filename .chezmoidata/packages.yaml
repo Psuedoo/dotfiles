@@ -30,3 +30,4 @@ packages:
       - 'colorz'
       - 'networkmanager-dmenu-git'
       - 'tmux'
+      - 'ttf-ubuntu-mono-nerd'

@@ -11,6 +11,7 @@ packages:
       - 'ripgrep'
       - 'npm'
       - 'qtile'
+      - 'qtile-extras'
       - 'rofi'
       - 'thunar'
       - 'kitty'

@@ -3,8 +3,10 @@ import os
 
 from libqtile import bar
 from libqtile.config import Screen
+from qtile_extras import widget
+from qtile_extras.widget.decorations import PowerLineDecoration
 
-from .widgets import *
+# from .widgets import *
 
 colors = os.path.expanduser("~/.cache/wal/colors.json")
 colordict = json.load(open(colors))
@@ -40,13 +42,20 @@ widget_defaults = dict(
 
 extension_defaults = widget_defaults.copy()
 
+
+powerline = {
+    "decorations": [
+        PowerLineDecoration(
+            path="forward_slash",
+        )
+    ]
+}
+
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(
-                    length=15,
-                ),
+                widget.Spacer(length=15),
                 widget.GroupBox(
                     fontsize=24,
                     borderwidth=3,
@@ -61,37 +70,17 @@ screens = [
                     other_screen_border=bg_color,
                     urgent_border=bg_color,
                     disable_drag=True,
+                    **powerline
                 ),
-                widget.Spacer(
-                    length=8,
-                ),
-                widget.Sep(),
-                widget.Spacer(
-                    length=8,
-                ),
+                widget.Spacer(length=8, **powerline),
                 widget.CurrentLayout(
-                    foreground=accent_color,
-                    fmt="Layout: {}",
-                ),
-                widget.TextBox(
-                    text="",
-                    padding=0,
-                    margin=0,
-                    fontsize=bar_height,
                     foreground=bg_color,
                     background=main_color,
+                    fmt="Layout: {}",
+                    **powerline
                 ),
                 widget.Spacer(
-                    foreground=main_color,
-                    background=main_color,
-                ),
-                widget.TextBox(
-                    text="",
-                    padding=0,
-                    margin=0,
-                    fontsize=28,
-                    foreground=bg_color,
-                    background=main_color,
+                    foreground=main_color, background=main_color, **powerline
                 ),
                 widget.Memory(
                     format="Mem Used: {MemUsed: .0f}{mm}",

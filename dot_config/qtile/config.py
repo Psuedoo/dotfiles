@@ -1,4 +1,5 @@
 import os
+import re
 import subprocess
 
 from libqtile import bar, hook, layout, qtile, widget
@@ -34,9 +35,14 @@ groups = [
             DropDown("Term", terminal, opacity=1, height=0.5, on_focus_lost_hide=False),
         ],
     ),
-    Group("1", label="", matches=[Match(wm_class=["Alacritty", "tmux", "kitty"])]),
-    Group("2", label="", matches=[Match(wm_class=["firefox"])]),
-    Group("3", label="󰙯", matches=[Match(wm_class=["discord"])]),
+    # Group("1", label="", matches=[Match(wm_class=["Alacritty", "tmux", "kitty"])]),
+    Group(
+        "1",
+        label="",
+        matches=[Match(wm_class=re.compile(r"^(Alacritty|tmux|kitty)$"))],
+    ),
+    Group("2", label="", matches=[Match(wm_class=re.compile(r"^(firefox)$"))]),
+    Group("3", label="󰙯", matches=[Match(wm_class=re.compile(r"^(discord)$"))]),
     Group("4", label="4"),
 ]
 
@@ -57,7 +63,8 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
-            Key([mod], "a", lazy.group["p"].dropdown_toggle("Term")),
+            # This creates a floating terminal, but there are some issues with it
+            # Key([mod], "a", lazy.group["p"].dropdown_toggle("Term")),
             # Or, use below if you prefer not to switch to that group.
             # # mod + shift + group number = move focused window to group
             # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),

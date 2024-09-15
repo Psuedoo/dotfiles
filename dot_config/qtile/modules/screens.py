@@ -82,11 +82,11 @@ screens = [
                 widget.Spacer(
                     foreground=main_color, background=main_color, **powerline
                 ),
-                widget.Memory(
-                    format="Mem Used: {MemUsed: .0f}{mm}",
-                    foreground=accent_color,
-                    update_interval=5,
-                ),
+                # widget.Memory(
+                #     format="Mem Used: {MemUsed: .0f}{mm}",
+                #     foreground=accent_color,
+                #     update_interval=5,
+                # ),
                 widget.Spacer(
                     length=8,
                 ),

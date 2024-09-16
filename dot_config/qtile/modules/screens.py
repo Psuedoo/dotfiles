@@ -6,10 +6,7 @@ from libqtile.config import Screen
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
 
-# from .widgets import *
-
 is_laptop = os.path.exists("/sys/class/backlight/intel_backlight/brightness")
-
 
 colors = os.path.expanduser("~/.cache/wal/colors.json")
 colordict = json.load(open(colors))
@@ -34,10 +31,16 @@ some_other_color = ColorG
 font_name = "Ubuntu Mono Bold"
 bar_height = 40
 
+default_font_size = 12
+widget_font_size = 24
+
+if is_laptop:
+    default_font_size = 22
+    widget_font_size = 32
 
 widget_defaults = dict(
     font=font_name,
-    fontsize=12,
+    fontsize=default_font_size,
     padding=3,
     background=bg_color,
     foreground=main_color,
@@ -81,7 +84,7 @@ laptop_widgets = [
 other_widgets = [
     widget.Spacer(length=15),
     widget.GroupBox(
-        fontsize=24,
+        fontsize=widget_font_size,
         borderwidth=3,
         highlight_method="line",
         block_highlight_text_color=main_color,
